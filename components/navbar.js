@@ -6,8 +6,13 @@ import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
 import { login } from "@/actions/login";
 import { signIn } from "next-auth/react";
-
+import { useCurentUser } from "@/hooks/useCurrentUser";
+import { useEffect } from "react";
 const Navbar = () => {
+  const user = useCurentUser()
+  useEffect(()=>{
+      console.log(user)
+  },[user])
   const navLinks = [
     {
       text: "Register",
@@ -29,10 +34,6 @@ const Navbar = () => {
       text: "FaQ",
       link: "#faq"
     },
-    {
-      text: "SignOut",
-      link: '/api/auth/signout'
-    }
   ]
 
   return (
@@ -89,12 +90,17 @@ const Navbar = () => {
                       </a>
 
                     ))}
-                    <span onClick={async () => {
-                      await signIn('google', { callbackUrl: '/dashboard' })
-                    }} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">Signin</span>
-                    {/* <Link href="/" className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5">         
-                        Get Started
-                    </Link> */}
+                    {user?.email ?
+                      <Link href='/dashboard'>
+                              <span className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
+                                Dashboard</span>
+                    
+                      </Link>
+                      :
+                      <span onClick={async () => {
+                        await signIn('google', { callbackUrl: '/dashboard' })
+                      }} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">Signin</span>
+                     }
                   </>
                 </Disclosure.Panel>
               </div>
@@ -112,11 +118,22 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
-            <li className="mr-3 nav__item">
-              <a onClick={async () => {
+            {user?.email ? 
+             <li className="mr-3 nav__item">
+              <Link href='/dashboard'>
+                <span  className="inline-block px-4 py-2 text-lg font-normal hover:cursor-pointer text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
+                Dashboard</span>
+              </Link>
+             </li> :
+             <li className="mr-3 nav__item">
+                <a onClick={async () => {
                 await signIn('google', { callbackUrl: '/dashboard' })
               }} className="inline-block px-4 py-2 text-lg font-normal hover:cursor-pointer text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">Signin</a>
 
+             </li> 
+             }
+            <li className="mr-3 nav__item">
+              
             </li>
           </ul>
         </div>

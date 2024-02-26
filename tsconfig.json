@@ -15,12 +15,13 @@
     "plugins": [
       {
         "name": "next"
-      }
+      },
+      
     ],
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "mongoose/mongodb.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "mongoose/mongodb.ts", "middleware", "auth.ts.old"],
   "exclude": ["node_modules"]
 }

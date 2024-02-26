@@ -1,11 +1,28 @@
 import mongoose, { Model } from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-  email: String,
-  name: String,
-  picture: String,
+  email: {
+    type:String,
+    required:true
+  },
+  name: {
+    type:String,
+
+  },
+  picture: {
+    type:String
+  },
   date: { type: Date, default: Date.now },
-  role: String
+  role: {
+    type:String,
+    required:true
+
+  },
+  applied:{
+    type:Boolean,
+    required:true
+  }
+
 });
 
 let userModel;

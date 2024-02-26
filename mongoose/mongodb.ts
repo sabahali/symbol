@@ -1,5 +1,10 @@
 import mongoose from "mongoose";
-
+export const config = {
+  runtime: "edge",
+  unstable_allowDynamic: [
+    '/node_modules/mongoose/dist/browser.umd.jsz'
+  ]
+};
 const MONGODB_URI = process.env.MONGODB_URI ;
 
 

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/navbar";
+import { auth } from '@/auth';
+import { SessionProvider } from 'next-auth/react';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -11,11 +13,12 @@ export const metadata: Metadata = {
   icons: ['favicon.ico']
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth();
   return (
     <html lang="en" suppressHydrationWarning={true} >
       <body suppressHydrationWarning={true} className={`${inter.className} w-full h-full dark:bg-zinc-800 bg-indigo-100`}>
@@ -25,10 +28,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          
 
-            
+
+          <SessionProvider session={session} >
+
             {children}
+          </SessionProvider>
 
 
         </ThemeProvider></body>

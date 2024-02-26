@@ -13,8 +13,6 @@ export default auth((req) => {
     const DEFAULT_LOGIN_REDIRECT = "/settings";
     const { nextUrl } = req;
     const isLoggedIn = !!req.auth;
-    const session = req.auth
-    console.log(req.auth)
     console.log(isLoggedIn)
     const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
     const isPublicRoute = publicRoutes.includes(nextUrl.pathname);

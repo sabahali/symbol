@@ -1,3 +1,4 @@
+
 import Hero from "../components/hero";
 import SectionTitle from "../components/sectionTitle";
 
@@ -9,8 +10,6 @@ import Testimonials from "../components/testimonials";
 import Cta from "../components/cta";
 import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
-import { motion } from "framer-motion";
-import { auth } from "@/auth";
 import Navbar from "@/components/navbar";
 export default async function Home() {
 
