@@ -8,11 +8,13 @@ import { login } from "@/actions/login";
 import { signIn } from "next-auth/react";
 import { useCurentUser } from "@/hooks/useCurrentUser";
 import { useEffect } from "react";
+import { useSession } from "next-auth/react";
 const Navbar = () => {
+  const {data,status} = useSession()
   const user = useCurentUser()
   useEffect(()=>{
-      console.log(user)
-  },[user])
+      console.log(data)
+  },[data])
   const navLinks = [
     {
       text: "Register",
