@@ -4,14 +4,9 @@ import formModel from "@/mongoose/applyShema"
 import userModel from "@/mongoose/userSchema"
 import dbConnect from "@/mongoose/mongodb"
 
-export default async function applyform(formData:FormData) {
-    const session = await auth()
-    const email = session?.user?.email
+export default async function applyform(formData:any) {
     const rawFormData = {
-        firstname: formData.get('firstname'),
-        lastname: formData.get('lastname'),
-        address: formData.get('address'),
-        email
+        ...formData,
       }
       console.log(rawFormData)
 
@@ -23,6 +18,6 @@ export default async function applyform(formData:FormData) {
         return {success:true}
         //after this update session data.applied = true
         }catch(err){
-        console.log(err)
+        throw err
     }
 }

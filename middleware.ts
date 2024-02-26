@@ -5,10 +5,6 @@ export default auth((req) => {
     const publicRoutes = [
         "/",
     ];
-    const authRoutes = [
-        
-     
-    ];
     const apiAuthPrefix = "/api/auth";
     const DEFAULT_LOGIN_REDIRECT = "/settings";
     const { nextUrl } = req;
