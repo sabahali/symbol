@@ -89,9 +89,9 @@ const Navbar = () => {
 
                     </Link> */}
                     {
-                      <a onClick={async () => {
+                      <a  onClick={async () => {
                         await login('/dashboard')
-                      }} className="w-full  hover:cursor-pointer dark:hover:text-slate-50 px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none dark:focus:text-slate-50">Signin</a>
+                      }} className="w-full select-none hover:cursor-pointer dark:hover:text-slate-50 px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none dark:focus:text-slate-50">Signin</a>
                     }
                     <span className="px-4 py-2 w-full">
                       <ThemeChanger />
@@ -120,10 +120,10 @@ const Navbar = () => {
               </Link>
             </li> */}
             {
-              <li className="mr-3 nav__item" onClick={async () => {
+              <li className="mr-3 nav__item " onClick={async () => {
                 await login('/dashboard')
               }}>
-                <a className="inline-block px-4 py-2 text-lg dark:hover:text-slate-50 font-normal hover:cursor-pointer text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800 dark:focus:text-slate-50">Signin</a>
+                <a className="inline-block select-none  px-4 py-2 text-lg dark:hover:text-slate-50 font-normal hover:cursor-pointer text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800 dark:focus:text-slate-50">Signin</a>
 
               </li>
             }
