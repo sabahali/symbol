@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     type:String,
 
   },
-  picture: {
+  image: {
     type:String
   },
   date: { type: Date, default: Date.now },
@@ -29,10 +29,10 @@ let userModel;
 
 try {
   // Try to retrieve the existing User model from mongoose.models
-   userModel = mongoose.models.User || mongoose.model("User", userSchema);
+   userModel = mongoose.models.users || mongoose.model("users", userSchema);
 } catch (error) {
   // Handle any errors that occur during model retrieval
-  console.error('Error retrieving User model:', error);
+  console.error('Error retrieving users model:', error);
 }
 
 export default userModel as Model<any, {}, {}, {}, any>;

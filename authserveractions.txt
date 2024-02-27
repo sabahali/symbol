@@ -1,0 +1,57 @@
+  callbacks: {
+        async signIn({ user, account, profile, email, credentials }) {
+            if (!profile?.email) {
+                return false
+            }
+            const user = await adapter.getUserByEmail(profile?.email)
+            // try {
+            //     const existingUser = await getUser(profile?.email)
+            //     if (!existingUser) {
+            //         // If the user doesn't exist, create a new user
+            //         // await userModel.create();
+            //         try {
+            //             await createUser({
+            //                 email: profile?.email,
+            //                 name: profile?.name ?? '',
+            //                 picture: profile?.picture,
+            //                 role: 'student',
+            //                 applied: false,
+            //             })
+            //         } catch (err) {
+            //             return false
+            //         }
+            //     }//     console.log('New user created:', profile?.email);
+            // } catch (err) {
+            //     return false
+            // }
+            return true
+        },
+        async session({ session, user, token }) {
+            // session.role = token.role
+            // session.applied = token.applied
+            return session
+        },
+        async jwt({ token, user, account, profile, trigger, session }) {
+            // if (trigger === "update" && session) {
+            //     // Note, that `session` can be any arbitrary object, remember to validate it!
+            //     token.applied = true;
+            // }
+            // if (user && user?.email) {
+            //     try {
+            //         const existingUser = await getUser(user?.email)
+            //         if (existingUser) {
+            //             token.role = existingUser?.role ?? "student";
+            //             token.applied = existingUser?.applied ?? false;
+            //         }
+            //     } catch (err) {
+            //         token.role = 'student',
+            //             token.applied = false
+            //     }
+
+            // }
+            return token
+        },
+        async redirect({ url, baseUrl }) {
+            return baseUrl;
+        },
+    },
