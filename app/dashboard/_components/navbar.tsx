@@ -3,10 +3,12 @@ import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import { useSession } from 'next-auth/react';
 import { signOut } from 'next-auth/react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 function DashNav() {
     const session = useSession()
     const user: any = session.data?.user
     const role = session.data?.role
+    const pathname = usePathname()
     const linktheme = {
         base: "block py-2 pr-4 pl-3 md:p-0",
         active: {
@@ -40,20 +42,20 @@ function DashNav() {
 
                 </div>
                 <Navbar.Collapse>
-                    <Link href="/dashboard" className={linktheme.active.off}>Home</Link>
+                    <Link href="/dashboard" className={pathname ==='/dashboard'? linktheme.active.on : linktheme.active.off}>Home</Link>
 
                     {role === 'student' ?
                         <>
-                            <Link href="/dashboard/apply" className={linktheme.active.off}>Apply</Link>
-                            <Link href="/dashboard/contact" className={linktheme.active.off}>Contact</Link>
+                            <Link href="/dashboard/apply" className={pathname ==='/dashboard/apply'? linktheme.active.on : linktheme.active.off}>Apply</Link>
+                            <Link href="/dashboard/contact" className={pathname ==='/dashboard/contact'? linktheme.active.on : linktheme.active.off}>Contact</Link>
                             {/* <Navbar> </Navbar>
                             <Navbar> <Link href="/dashboard/contact">Contact</Link></Navbar> */}
-                            <Link href="/dashboard/students" className={linktheme.active.off}>Students</Link>
+                            <Link href="/dashboard/students" className={pathname ==='/dashboard/students'? linktheme.active.on : linktheme.active.off}>Students</Link>
 
                         </>
                         : role === 'teacher' ?
                             <>
-                                <Link href="/dashboard/students" className={linktheme.active.off}>Students</Link>
+                                <Link href="/dashboard/students" className={pathname ==='/dashboard/students'? linktheme.active.on : linktheme.active.off}>Students</Link>
 
                             </>
                             : null
