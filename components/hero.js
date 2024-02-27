@@ -131,7 +131,7 @@ const Hero = () => {
                 onClick={async () => {
                   await login('/dashboard/apply')
                 }}
-                className="px-4 py-2 md:px-8 md:py-4 text-lg font-medium text-center text-white bg-blue-600 hover:bg-blue-800 rounded-md ">
+                className="px-4 py-1 md:px-6 text-base md:py-3 md:mt-4 sm:text-lg font-medium text-center text-white bg-blue-600 hover:bg-blue-800 rounded-md ">
                 Register Now
               </button>
               {/* <a
