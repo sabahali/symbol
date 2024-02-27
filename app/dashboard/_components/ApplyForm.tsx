@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
+import { Button,Label, TextInput } from 'flowbite-react';
 import applyform from '@/actions/applyform';
 import {  useState } from 'react';
 function ApplyForm({ setSuccess, setError,update,session }: any) {

@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { auth } from '@/auth';
-import { SessionProvider } from 'next-auth/react';
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,7 +15,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await auth();
   return (
     <html lang="en" suppressHydrationWarning={true} >
       <body suppressHydrationWarning={true} className={`${inter.className} w-full h-full dark:bg-zinc-800 bg-indigo-100`}>
@@ -28,12 +24,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-
-
-          <SessionProvider session={session} >
-
             {children}
-          </SessionProvider>
 
 
         </ThemeProvider></body>

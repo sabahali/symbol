@@ -5,7 +5,7 @@ export default async function getStudents () {
     try{
         await dbConnect()
         const resp = await formModel.find()
-        return resp
+        return JSON.stringify(resp)
     }catch(err){
         return null
     }

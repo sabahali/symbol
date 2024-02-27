@@ -1,12 +1,12 @@
 'use client';
 import { Avatar, Dropdown, Navbar } from 'flowbite-react';
-import { useCurentUser } from '@/hooks/useCurrentUser';
-import { useCurentRole } from '@/hooks/useCurrentRole';
+import { useSession } from 'next-auth/react';
 import { signOut } from 'next-auth/react';
 import Link from 'next/link';
 function DashNav() {
-    const user: any = useCurentUser()
-    const role = useCurentRole()
+    const session = useSession()
+    const user: any = session.data?.user
+    const role = session.data?.role
     const linktheme = {
         base: "block py-2 pr-4 pl-3 md:p-0",
         active: {
@@ -34,7 +34,7 @@ function DashNav() {
                             <span className="block truncate text-sm font-medium">{user?.email}</span>
                         </Dropdown.Header>
                         <Dropdown.Divider />
-                        <Dropdown.Item onClick={() => signOut()}>Sign out</Dropdown.Item>
+                        <Dropdown.Item onClick={() => signOut({redirect:true,callbackUrl:'/'})}>Sign out</Dropdown.Item>
                     </Dropdown>
                     <Navbar.Toggle />
                 </div>
@@ -50,12 +50,12 @@ function DashNav() {
                             <Link href="/dashboard/students" className={linktheme.active.off}>Students</Link>
 
                         </>
-                        :
+                        : role === 'teacher' ? 
                         <>
                             <Link href="/dashboard/students" className={linktheme.active.off}>Students</Link>
 
                         </>
-
+                        :null
                     }
 
                 </Navbar.Collapse>

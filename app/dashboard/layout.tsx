@@ -5,11 +5,12 @@ import { SessionProvider } from 'next-auth/react';
 import { auth } from '@/auth';
 export default async function Layout({ children }: { children: React.ReactNode }) {
     const session = await auth();
+
     return (
         <>
             <ThemeModeScript />
-            <DashNav />
             <SessionProvider session={session}>
+                <DashNav />
                 <main>{children}</main>
 
             </SessionProvider>

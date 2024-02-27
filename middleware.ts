@@ -1,12 +1,36 @@
  import {authConfig} from "./auth.config"
  import NextAuth from "next-auth"
-//  export const { auth: middleware } = NextAuth(authConfig)
-const { auth } = NextAuth(authConfig);
-
- export default auth((req) => {
+ import { signIn } from "@/auth";
+ export const { auth: middleware } = NextAuth(authConfig)
+import { login } from "./actions/login";
+// const { auth } = NextAuth(authConfig);
+const publicRoutes = [
+    "/",
+];
+const authRoutes = ['/dashboard/students']
+const apiAuthPrefix = "/api/auth";
+ export default middleware(async (req) => {
+ 
+    // const DEFAULT_LOGIN_REDIRECT = "/dashboard";
     const { nextUrl } = req;
     const isLoggedIn = !!req.auth;
-    console.log(isLoggedIn)
+    const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
+    const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
+    if(isApiAuthRoute){
+        return 
+    }
+
+    if (!isPublicRoute && !isLoggedIn ) {
+        // let callbackUrl = nextUrl.pathname;
+        // if (nextUrl.search) {
+        //     callbackUrl += nextUrl.search;
+        // }
+        // const encodedCallbackUrl = encodeURIComponent(callbackUrl);
+        return Response.redirect(new URL(
+            `/`,
+            nextUrl
+        ));
+    }
 
  })
  export const config = {

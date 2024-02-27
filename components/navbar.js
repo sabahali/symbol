@@ -1,20 +1,11 @@
 "use client"
-
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
 import { login } from "@/actions/login";
-import { signIn } from "next-auth/react";
-import { useCurentUser } from "@/hooks/useCurrentUser";
-import { useEffect } from "react";
-import { useSession } from "next-auth/react";
+
 const Navbar = () => {
-  const {data,status} = useSession()
-  const user = useCurentUser()
-  useEffect(()=>{
-      console.log(data)
-  },[data])
   const navLinks = [
     {
       text: "Register",
@@ -92,15 +83,14 @@ const Navbar = () => {
                       </a>
 
                     ))}
-                    {user?.email ?
-                      <Link href='/dashboard'>
-                              <span className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
-                                Dashboard</span>
-                    
-                      </Link>
-                      :
+                    {/* <Link href='/dashboard'>
+                      <span className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
+                        Dashboard</span>
+
+                    </Link> */}
+                    {
                       <span onClick={async () => {
-                        await signIn('google', { callbackUrl: '/dashboard' })
+                        await login('/dashboard')
                       }} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">Signin</span>
                      }
                   </>
@@ -120,23 +110,21 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
-            {user?.email ? 
-             <li className="mr-3 nav__item">
+            {/* <li className="mr-3 nav__item">
               <Link href='/dashboard'>
-                <span  className="inline-block px-4 py-2 text-lg font-normal hover:cursor-pointer text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
-                Dashboard</span>
+                <span className="inline-block px-4 py-2 text-lg font-normal hover:cursor-pointer text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
+                  Dashboard</span>
               </Link>
-             </li> :
-             <li className="mr-3 nav__item">
+            </li> */}
+            {
+              <li className="mr-3 nav__item">
                 <a onClick={async () => {
-                await signIn('google', { callbackUrl: '/dashboard' })
-              }} className="inline-block px-4 py-2 text-lg font-normal hover:cursor-pointer text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">Signin</a>
+                  await login('/dashboard')
+                }} className="inline-block px-4 py-2 text-lg font-normal hover:cursor-pointer text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">Signin</a>
 
-             </li> 
-             }
-            <li className="mr-3 nav__item">
-              
-            </li>
+              </li>
+            }
+
           </ul>
         </div>
 

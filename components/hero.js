@@ -5,11 +5,9 @@ import { TypewriterEffect } from "./typewriter-effect";
 import { TextGenerateEffect } from "./text-generate-effect";
 import { InfiniteMovingCards } from "./infinite-moving-cards";
 import HeroAnim from '@/Lottiefiles/HeroAnim'
-import Link from "next/link";
 import { useCurentUser } from "@/hooks/useCurrentUser";
 import { redirect } from "next/navigation";
 import { login } from "@/actions/login";
-
 const testimonials = [
   {
     quote:
@@ -96,7 +94,6 @@ const words = [
 
 ];
 const Hero = () => {
-const user = useCurentUser()
   const subheading = `Fostering Innovative Research Academy`
   return (
     <>
@@ -130,9 +127,9 @@ const user = useCurentUser()
                 }
               }}
             >
-              <button 
-                onClick={async ()=>{
-                  user?.email ? redirect('/dashboard/apply') : await login('/dashboard/apply')
+              <button
+                onClick={async () => {
+                  await login('/dashboard/apply')
                 }}
                 className="px-4 py-2 md:px-8 md:py-4 text-lg font-medium text-center text-white bg-blue-600 hover:bg-blue-800 rounded-md ">
                 Register Now
@@ -159,7 +156,7 @@ const user = useCurentUser()
           </div>
         </div>
         <div className=" container  flex flex-col flex-wrap justify-center pt-0  lg:pt-[10vh] items-center  sm:w-[70vw]  w-full h-full xl:w-1/2 md:w-2/3">
-          <HeroAnim />
+
           <motion.div
 
             className="h-full w-full "
@@ -190,7 +187,7 @@ const user = useCurentUser()
               /> */}
 
 
-
+            <HeroAnim />
           </motion.div>
         </div>
 
