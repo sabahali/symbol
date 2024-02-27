@@ -17,6 +17,7 @@ function DashNav() {
     return (
         <>
             <Navbar fluid rounded>
+                <Navbar.Toggle />
                 <Navbar.Brand>
                     {/* <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" /> */}
                     <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Symbol Academy</span>
@@ -34,9 +35,9 @@ function DashNav() {
                             <span className="block truncate text-sm font-medium">{user?.email}</span>
                         </Dropdown.Header>
                         <Dropdown.Divider />
-                        <Dropdown.Item onClick={() => signOut({redirect:true,callbackUrl:'/'})}>Sign out</Dropdown.Item>
+                        <Dropdown.Item onClick={() => signOut({ redirect: true, callbackUrl: '/' })}>Sign out</Dropdown.Item>
                     </Dropdown>
-                    <Navbar.Toggle />
+
                 </div>
                 <Navbar.Collapse>
                     <Link href="/dashboard" className={linktheme.active.off}>Home</Link>
@@ -50,12 +51,12 @@ function DashNav() {
                             <Link href="/dashboard/students" className={linktheme.active.off}>Students</Link>
 
                         </>
-                        : role === 'teacher' ? 
-                        <>
-                            <Link href="/dashboard/students" className={linktheme.active.off}>Students</Link>
+                        : role === 'teacher' ?
+                            <>
+                                <Link href="/dashboard/students" className={linktheme.active.off}>Students</Link>
 
-                        </>
-                        :null
+                            </>
+                            : null
                     }
 
                 </Navbar.Collapse>
