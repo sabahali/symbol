@@ -78,7 +78,7 @@ const Navbar = () => {
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
                     {navLinks.map((item, index) => (
-                      <a key={index} href={`${item.link}`} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
+                      <a key={index} href={`${item.link}`} className="w-full  dark:hover:text-slate-50 px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none dark:focus:text-slate-50">
                         {item.text}
                       </a>
 
@@ -89,9 +89,9 @@ const Navbar = () => {
 
                     </Link> */}
                     {
-                      <span onClick={async () => {
+                      <a onClick={async () => {
                         await login('/dashboard')
-                      }} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">Signin</span>
+                      }} className="w-full  hover:cursor-pointer dark:hover:text-slate-50 px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none dark:focus:text-slate-50">Signin</a>
                      }
                   </>
                 </Disclosure.Panel>
@@ -105,7 +105,7 @@ const Navbar = () => {
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navLinks.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
-                <a href={`${menu.link}`} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
+                <a href={`${menu.link}`} className="inline-block dark:hover:text-slate-50 px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800 dark:focus:text-slate-50">
                   {menu.text}
                 </a>
               </li>
@@ -117,10 +117,10 @@ const Navbar = () => {
               </Link>
             </li> */}
             {
-              <li role="button" className="mr-3 nav__item" onClick={async () => {
+              <li className="mr-3 nav__item" onClick={async () => {
                 await login('/dashboard')
               }}>
-                <a  className="inline-block px-4 py-2 text-lg font-normal hover:cursor-pointer text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">Signin</a>
+                <a  className="inline-block px-4 py-2 text-lg dark:hover:text-slate-50 font-normal hover:cursor-pointer text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800 dark:focus:text-slate-50">Signin</a>
 
               </li>
             }
