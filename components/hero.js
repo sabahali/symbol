@@ -97,10 +97,10 @@ const Hero = () => {
   const subheading = `Fostering Innovative Research Academy`
   return (
     <>
-      <Container className="flex  flex-wrap items-center justify-center w-full min-h-[50vh]">
-        <div id="home" className="flex p-8  items-center justify-start w-full xl:w-1/2 mb-[10vh] sm:mb-0 ">
+      <Container className="flex container flex-wrap items-center justify-center w-full min-h-[80vh]">
+        <div id="home" className="flex p-8  items-center justify-start w-full xl:w-[60%] mb-[10vh] sm:mb-0 ">
           <div className="flex flex-col w-full justify-center items-start lg:pl-10">
-            <div className="font-bold">
+            <div className=" font-bold">
 
               <TypewriterEffect words={words} />
 
@@ -155,7 +155,7 @@ const Hero = () => {
             </motion.div>
           </div>
         </div>
-        <div className=" container  flex flex-col flex-wrap justify-center pt-0  lg:pt-[10vh] items-center  sm:w-[70vw]  w-full h-full xl:w-1/2 md:w-2/3">
+        <div className=" container  flex flex-col flex-wrap justify-center pt-0  lg:pt-[10vh] items-center  sm:w-[70vw]  w-full h-full xl:w-[40%] md:w-2/3">
 
           <motion.div
 
