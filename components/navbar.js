@@ -117,10 +117,10 @@ const Navbar = () => {
               </Link>
             </li> */}
             {
-              <li className="mr-3 nav__item">
-                <a onClick={async () => {
-                  await login('/dashboard')
-                }} className="inline-block px-4 py-2 text-lg font-normal hover:cursor-pointer text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">Signin</a>
+              <li className="mr-3 nav__item" onClick={async () => {
+                await login('/dashboard')
+              }}>
+                <a  className="inline-block px-4 py-2 text-lg font-normal hover:cursor-pointer text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">Signin</a>
 
               </li>
             }

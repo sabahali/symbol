@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { Disclosure, Transition } from "@headlessui/react";
+import sendEmail from "@/actions/sendEmail";
 
 const PopupWidget = () => {
   const {
@@ -21,31 +22,34 @@ const PopupWidget = () => {
 
   const onSubmit = async (data, e) => {
     console.log(data);
-    await fetch("", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(data, null, 2),
-    })
-      .then(async (response) => {
-        let json = await response.json();
-        if (json.success) {
-          setIsSuccess(true);
-          setMessage(json.message);
-          e.target.reset();
-          reset();
-        } else {
-          setIsSuccess(false);
-          setMessage(json.message);
-        }
-      })
-      .catch((error) => {
-        setIsSuccess(false);
-        setMessage("Client Error. Please check the console.log for more info");
-        console.log(error);
-      });
+      // sendEmail().then(async(res)=>{
+      //   let json = await response.json();
+      // })
+    // await fetch("", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Accept: "application/json",
+    //   },
+    //   body: JSON.stringify(data, null, 2),
+    // })
+    //   .then(async (response) => {
+    //     let json = await response.json();
+    //     if (json.success) {
+    //       setIsSuccess(true);
+    //       setMessage(json.message);
+    //       e.target.reset();
+    //       reset();
+    //     } else {
+    //       setIsSuccess(false);
+    //       setMessage(json.message);
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     setIsSuccess(false);
+    //     setMessage("Client Error. Please check the console.log for more info");
+    //     console.log(error);
+    //   });
   };
 
   return (
