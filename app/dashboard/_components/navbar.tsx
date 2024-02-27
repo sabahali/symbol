@@ -1,9 +1,11 @@
 'use client';
-import { Avatar, Dropdown, Navbar } from 'flowbite-react';
+import { Avatar, Dropdown, Navbar, NavbarToggle } from 'flowbite-react';
 import { useSession } from 'next-auth/react';
 import { signOut } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import ThemeChanger from '@/components/DarkSwitch';
+
 function DashNav() {
     const session = useSession()
     const user: any = session.data?.user
@@ -19,7 +21,7 @@ function DashNav() {
     return (
         <>
             <Navbar fluid rounded>
-                <Navbar.Toggle />
+                <Navbar.Toggle></Navbar.Toggle>
                 <Navbar.Brand>
                     {/* <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" /> */}
                     <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Symbol Academy</span>
@@ -42,25 +44,27 @@ function DashNav() {
 
                 </div>
                 <Navbar.Collapse>
-                    <Link href="/dashboard" className={pathname ==='/dashboard'? linktheme.active.on : linktheme.active.off}>Home</Link>
+                    <Link href="/dashboard" className={pathname === '/dashboard' ? linktheme.active.on : linktheme.active.off}>Home</Link>
 
                     {role === 'student' ?
                         <>
-                            <Link href="/dashboard/apply" className={pathname ==='/dashboard/apply'? linktheme.active.on : linktheme.active.off}>Apply</Link>
-                            <Link href="/dashboard/contact" className={pathname ==='/dashboard/contact'? linktheme.active.on : linktheme.active.off}>Contact</Link>
+                            <Link href="/dashboard/apply" className={pathname === '/dashboard/apply' ? linktheme.active.on : linktheme.active.off}>Apply</Link>
+                            <Link href="/dashboard/contact" className={pathname === '/dashboard/contact' ? linktheme.active.on : linktheme.active.off}>Contact</Link>
                             {/* <Navbar> </Navbar>
                             <Navbar> <Link href="/dashboard/contact">Contact</Link></Navbar> */}
-                            <Link href="/dashboard/students" className={pathname ==='/dashboard/students'? linktheme.active.on : linktheme.active.off}>Students</Link>
+                            <Link href="/dashboard/students" className={pathname === '/dashboard/students' ? linktheme.active.on : linktheme.active.off}>Students</Link>
 
                         </>
                         : role === 'teacher' ?
                             <>
-                                <Link href="/dashboard/students" className={pathname ==='/dashboard/students'? linktheme.active.on : linktheme.active.off}>Students</Link>
+                                <Link href="/dashboard/students" className={pathname === '/dashboard/students' ? linktheme.active.on : linktheme.active.off}>Students</Link>
 
                             </>
                             : null
                     }
-
+                    <Navbar.Brand>
+                        <ThemeChanger />
+                    </Navbar.Brand>
                 </Navbar.Collapse>
             </Navbar>
         </>
