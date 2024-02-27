@@ -97,8 +97,8 @@ const Hero = () => {
   const subheading = `Fostering Innovative Research Academy`
   return (
     <>
-      <Container className="flex container flex-wrap items-center justify-center w-full min-h-[80vh]">
-        <div id="home" className="flex p-8  items-center justify-start w-full xl:w-[60%] mb-[10vh] sm:mb-0 ">
+      <Container className="flex flex-wrap items-center justify-center w-full min-h-[70vh] md:min-h-[80vh]">
+        <div id="home" className="flex p-8  items-center justify-start w-full xl:w-[60%] 2xl:w-1/2 mb-[10vh] sm:mb-0 ">
           <div className="flex flex-col w-full justify-center items-start lg:pl-10">
             <div className=" font-bold">
 
@@ -131,7 +131,7 @@ const Hero = () => {
                 onClick={async () => {
                   await login('/dashboard/apply')
                 }}
-                className="px-4 py-1 md:px-6 text-base md:py-3 md:mt-4 sm:text-lg font-medium text-center text-white bg-blue-600 hover:bg-blue-800 rounded-md ">
+                className="px-4 py-2 md:px-6 text-base md:py-3 md:mt-4 sm:text-lg font-medium text-center text-white bg-blue-600 hover:bg-blue-800 rounded-md ">
                 Register Now
               </button>
               {/* <a
@@ -155,7 +155,7 @@ const Hero = () => {
             </motion.div>
           </div>
         </div>
-        <div className=" container  flex flex-col flex-wrap justify-center pt-0  lg:pt-[10vh] items-center  sm:w-[70vw]  w-full h-full xl:w-[40%] md:w-2/3">
+        <div className=" container  flex flex-col flex-wrap justify-center pt-0  lg:pt-[10vh] items-center  sm:w-[70vw]  w-full h-full xl:w-[40%] md:w-2/3 2xl:w-1/2">
 
           <motion.div
 
