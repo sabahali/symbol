@@ -1,4 +1,5 @@
 import { authConfig } from "./auth.config"
+import { NextResponse } from "next/server";
 import NextAuth from "next-auth"
 export const { auth } = NextAuth(authConfig);
 const publicRoutes = [
@@ -34,7 +35,17 @@ export default auth(async (req) => {
             nextUrl
         )); 
     }
-
+    // req.headers.set('x-pathname',nextUrl.pathname)
+    // console.log(req.headers.get('x-pathname'))
+    // const requestHeaders = new Headers(req.headers);
+    // requestHeaders.set('x-pathname', nextUrl.pathname);
+  
+    // return NextResponse.next({
+    //   request: {
+    //     // Apply new request headers
+    //     headers: requestHeaders,
+    //   }
+    // });
 })
 export const config = {
     matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],

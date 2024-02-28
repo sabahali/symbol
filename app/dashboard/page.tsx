@@ -1,14 +1,6 @@
-"use client"
 import 'flowbite';
-// import { login } from '@/actions/login';
-import { useSession } from 'next-auth/react';
-import { useEffect } from 'react';
-export default function DashBoard() {
-  const { data: session, status } = useSession()
-  useEffect(() => {
-    console.log(session)
-  }, [session])
 
+export default function DashBoard() {
   return (
     <>
       <div className='w-full h-[90vh] flex-col items-center gap-5'>

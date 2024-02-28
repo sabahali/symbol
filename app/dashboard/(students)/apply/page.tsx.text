@@ -1,0 +1,26 @@
+import { auth } from '@/auth'
+import Form from './_form'
+import { SessionProvider } from 'next-auth/react'
+async function Apply() {
+    const session = await auth()
+    const applied = session?.applied
+    console.log('applied',applied)
+    return (
+        <div className='h-full w-full flex flex-wrap justify-center items-center'>
+            {applied == true ?
+                <div className='w-full h-[90vh] space-y-5 flex flex-wrap flex-col gap-6 justify-center items-center'>
+                    <h1 className='text-xl p-2 text-center md:text-4xl '> You have applied to Symbol Academy Successfully </h1>
+                    <h1 className='text-md p-2 text-center md:text-xl'> We will contact you sooon !</h1>
+                </div>
+
+                :
+                <SessionProvider session={session}>
+                    <Form />
+                </SessionProvider>
+
+            }
+        </div >
+    )
+}
+
+export default Apply

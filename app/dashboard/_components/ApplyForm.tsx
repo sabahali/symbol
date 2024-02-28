@@ -4,8 +4,10 @@ import { Button,Label, TextInput } from 'flowbite-react';
 import applyform from '@/actions/applyform';
 import {  useState } from 'react';
 import gmailForm from '@/actions/gmailForm';
+import { useRouter } from 'next/navigation';
 function ApplyForm({ setSuccess, setError,update,session }: any) {
     const [loading, setLoading] = useState(false)
+    const router = useRouter()
     const onSumbit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true)
@@ -35,7 +37,7 @@ function ApplyForm({ setSuccess, setError,update,session }: any) {
         } finally {
             setLoading(false)
             await update({...session,applied:true})
-
+            router.refresh()
         }
 
     }

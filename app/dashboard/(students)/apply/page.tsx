@@ -4,15 +4,15 @@ import ApplyForm from '../../_components/ApplyForm'
 import { useSession } from 'next-auth/react'
 function Apply() {
      const { data: session, status,update } = useSession()
-    const [success, setSuccess] = useState(false)
+    const [success, setSuccess] = useState(session?.applied)
     const [error, setError] = useState(false)
   
-    useEffect(()=>{
-        if(session?.applied === true){
-            setSuccess(true)
-        }
+    // useEffect(()=>{
+    //     if(session?.applied === true){
+    //         setSuccess(true)
+    //     }
         
-    },[session])
+    // },[session])
       // if (status === "loading") {
     //     return <p>Loading...</p>
     //   }

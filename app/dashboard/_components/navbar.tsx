@@ -5,7 +5,6 @@ import { signOut } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeChanger from '@/components/DarkSwitch';
-
 function DashNav() {
     const session = useSession()
     const user: any = session.data?.user
