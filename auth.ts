@@ -11,7 +11,10 @@ import userModel from "./mongoose/userSchema";
 declare module "@auth/core/types" {
     interface Session {
         role: String,
-        applied: Boolean
+        applied: Boolean,
+        user: DefaultSession["user"] & {
+            role: String;
+          };
     }
 }
 declare module "@auth/core/jwt" {

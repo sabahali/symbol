@@ -1,9 +1,4 @@
 import type { NextAuthConfig } from 'next-auth';
-import getUser from './actions/getUser';
-import createUser from './actions/createUser';
-import { clientPromise, client } from "./mongoose/mongoclient";
-import dbConnect from './mongoose/mongodb';
-import userModel from './mongoose/userSchema';
 import Google from "next-auth/providers/google";
 
 
@@ -30,7 +25,8 @@ export const authConfig = {
              email:profile.email,
              image:profile.picture,
              applied:false,
-             role:'student'
+             role:'student',
+             emailVerified:profile.emailVerified
             }
           }
     })],

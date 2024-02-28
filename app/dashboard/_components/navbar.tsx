@@ -52,8 +52,6 @@ function DashNav() {
                             <Link href="/dashboard/contact" className={pathname === '/dashboard/contact' ? linktheme.active.on : linktheme.active.off}>Contact</Link>
                             {/* <Navbar> </Navbar>
                             <Navbar> <Link href="/dashboard/contact">Contact</Link></Navbar> */}
-                            <Link href="/dashboard/students" className={pathname === '/dashboard/students' ? linktheme.active.on : linktheme.active.off}>Students</Link>
-
                         </>
                         : role === 'teacher' ?
                             <>

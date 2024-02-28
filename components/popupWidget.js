@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { Disclosure, Transition } from "@headlessui/react";
 import sendEmail from "@/actions/sendEmail";
+import sendGmail from "@/actions/sendgmail";
 
 const PopupWidget = () => {
   const {
@@ -22,34 +23,23 @@ const PopupWidget = () => {
 
   const onSubmit = async (data, e) => {
     console.log(data);
-      // sendEmail().then(async(res)=>{
-      //   let json = await response.json();
-      // })
-    // await fetch("", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "application/json",
-    //   },
-    //   body: JSON.stringify(data, null, 2),
-    // })
-    //   .then(async (response) => {
-    //     let json = await response.json();
-    //     if (json.success) {
-    //       setIsSuccess(true);
-    //       setMessage(json.message);
-    //       e.target.reset();
-    //       reset();
-    //     } else {
-    //       setIsSuccess(false);
-    //       setMessage(json.message);
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     setIsSuccess(false);
-    //     setMessage("Client Error. Please check the console.log for more info");
-    //     console.log(error);
-    //   });
+    try {
+      const resp = await sendGmail({ name: data.name, from: data.email, message: data.message })
+      const json = await JSON.parse(resp)
+      console.log(json)
+      if (json.success == true) {
+        console.log(json)
+        setIsSuccess(true);
+        setMessage("Email Sent Successfully");
+        e.target.reset();
+      } else if (json.success === false) {
+        setIsSuccess(false);
+        setMessage("Email Sending Failed")
+      }
+    } catch (err) {
+      setIsSuccess(false);
+      setMessage("Network Error!")
+    }
   };
 
   return (
@@ -122,25 +112,9 @@ const PopupWidget = () => {
                     <form onSubmit={handleSubmit(onSubmit)} noValidate>
                       <input
                         type="hidden"
-                        value="YOUR_ACCESS_KEY_HERE"
-                        {...register("apikey")}
-                      />
-                      <input
-                        type="hidden"
                         value={`${userName} sent a message from Nextly`}
                         {...register("subject")}
                       />
-                      <input
-                        type="hidden"
-                        value="Nextly Template"
-                        {...register("from_name")}
-                      />
-                      <input
-                        type="checkbox"
-                        className="hidden"
-                        style={{ display: "none" }}
-                        {...register("botcheck")}></input>
-
                       <div className="mb-4">
                         <label
                           htmlFor="full_name"
@@ -155,11 +129,10 @@ const PopupWidget = () => {
                             required: "Full name is required",
                             maxLength: 80,
                           })}
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
-                            errors.name
-                              ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
-                          }`}
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${errors.name
+                            ? "border-red-600 focus:border-red-600 ring-red-100"
+                            : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                            }`}
                         />
                         {errors.name && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
@@ -185,11 +158,10 @@ const PopupWidget = () => {
                             },
                           })}
                           placeholder="you@company.com"
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
-                            errors.email
-                              ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
-                          }`}
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${errors.email
+                            ? "border-red-600 focus:border-red-600 ring-red-100"
+                            : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                            }`}
                         />
 
                         {errors.email && (
@@ -213,11 +185,10 @@ const PopupWidget = () => {
                             required: "Enter your Message",
                           })}
                           placeholder="Your Message"
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${
-                            errors.message
-                              ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
-                          }`}
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${errors.message
+                            ? "border-red-600 focus:border-red-600 ring-red-100"
+                            : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                            }`}
                           required></textarea>
                         {errors.message && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
@@ -252,20 +223,6 @@ const PopupWidget = () => {
                           )}
                         </button>
                       </div>
-                      <p
-                        className="text-xs text-center text-gray-400"
-                        id="result">
-                        {/* <span>
-                          Powered by{" "}
-                          <a
-                            href="https://Web3Forms.com"
-                            className="text-gray-600"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            Web3Forms
-                          </a>
-                        </span> */}
-                      </p>
                     </form>
                   )}
 

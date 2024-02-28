@@ -1,8 +1,6 @@
  import {authConfig} from "./auth.config"
  import NextAuth from "next-auth"
- import { signIn } from "@/auth";
 //  export const { auth: middleware } = NextAuth(authConfig)
-import { login } from "./actions/login";
 export const { auth } = NextAuth(authConfig);
 const publicRoutes = [
     "/",
@@ -33,9 +31,11 @@ const apiAuthPrefix = "/api/auth";
             nextUrl
         ));
     }
+    // console.log(req.cookies)
     // if(isAuthRoute && req.auth?.role !== 'teacher' ){
+        
     //     return Response.redirect(new URL(
-    //         `/`,
+    //         `/dashboard`,
     //         nextUrl
     //     )); 
     // }

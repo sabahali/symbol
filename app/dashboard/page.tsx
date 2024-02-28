@@ -1,18 +1,13 @@
 "use client"
 import 'flowbite';
 // import { login } from '@/actions/login';
-// import { useSession } from 'next-auth/react';
-// import { useEffect } from 'react';
+import { useSession } from 'next-auth/react';
+import { useEffect } from 'react';
 export default function DashBoard() {
-  // const { data: session, status } = useSession()
-  // useEffect(() => {
-  //   async function signin() {
-  //     if (status == 'unauthenticated') {
-  //       await login('/dashboard')
-  //     }
-  //   }
-  //   signin()
-  // }, [session])
+  const { data: session, status } = useSession()
+  useEffect(() => {
+    console.log(session)
+  }, [session])
 
   return (
     <>

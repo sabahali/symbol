@@ -3,6 +3,7 @@
 import { Button,Label, TextInput } from 'flowbite-react';
 import applyform from '@/actions/applyform';
 import {  useState } from 'react';
+import gmailForm from '@/actions/gmailForm';
 function ApplyForm({ setSuccess, setError,update,session }: any) {
     const [loading, setLoading] = useState(false)
     const onSumbit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,7 +21,12 @@ function ApplyForm({ setSuccess, setError,update,session }: any) {
         try {
             const resp = await applyform(rawFormData)
             if (resp?.success == true) {
-                setSuccess(true)                
+                setSuccess(true)
+                try{
+                await gmailForm(rawFormData)
+                }catch(err){
+                    console.log(err)
+                }             
             } else {
                 setError(true)
             }
