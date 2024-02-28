@@ -14,7 +14,7 @@ declare module "@auth/core/types" {
         applied: Boolean,
         user: DefaultSession["user"] & {
             role: String;
-          };
+        };
     }
 }
 declare module "@auth/core/jwt" {
@@ -32,7 +32,7 @@ const config = {
                 return false
             }
             return true
-        },
+        }, 
         async session({ session, user, token }) {
             session.role = token.role
             session.applied = token.applied
@@ -48,14 +48,14 @@ const config = {
                     try {
                         // const existingUser = await getUser(user?.email)
                         await dbConnect();
-                        const existingUser = await userModel.findOne({ email : user?.email })
+                        const existingUser = await userModel.findOne({ email: user?.email })
                         if (existingUser) {
                             token.role = existingUser?.role ?? "student";
                             token.applied = existingUser?.applied ?? false;
                         }
                     } catch (err) {
                         token.role = 'student',
-                        token.applied = false
+                            token.applied = false
                     }
 
                 }

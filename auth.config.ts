@@ -30,6 +30,13 @@ export const authConfig = {
             }
           }
     })],
+    callbacks:{
+        async session({ session, user, token }) {
+            session.role = token.role
+            session.applied = token.applied
+            return session
+        },
+    },
     secret: process.env.NEXTAUTH_SECRET,
     basePath: "/api/auth",
     trustHost: true,
