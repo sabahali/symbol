@@ -23,7 +23,7 @@ export default async function Home() {
       <Features/>
       <SectionTitle
         id='courses'
-        pretitle=" "
+        pretitle="courses"
         title="Available Research Courses"
 
       >
@@ -34,13 +34,13 @@ export default async function Home() {
         pretitle="Watch a video"
         id="company"
         title="Learn how to fullfil your needs">
-        Heading for Video About Institute
+         &nbsp;
       </SectionTitle>
       <Video />
       <SectionTitle
-        pretitle="Testimonials"
+        pretitle="Founders"
         title="Here's what our customers said">
-        Testimonials for Institute
+        &nbsp;
       </SectionTitle>
       <Testimonials />
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions" id="faq">

@@ -7,11 +7,7 @@ import Container from "./container";
 
 export default function Footer() {
   const navigation = [
-    "Product",
-    "Features",
-    "Pricing",
     "Company",
-    "Blog",
   ];
   const legal = ["Terms", "Privacy", "Legal"];
   return (
@@ -23,36 +19,21 @@ export default function Footer() {
               {" "}
               <Link href="/" className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
                     <Image
-                      src="/img/logo.svg"
+                      src="/symbol.png"
                       alt="N"
                       width="32"
                       height="32"
                       className="w-8"
                     />
-                  <span>Company Name</span>
+                  <span>Symbol Academy</span>
               </Link>
             </div>
 
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
               What to write ?
             </div>
-{/* 
-            <div className="mt-5">
-              <a
-                href="https://vercel.com/?utm_source=web3templates&utm_campaign=oss"
-                target="_blank"
-                rel="noopener"
-                className="relative block w-44">
-                <Image
-                  src="/img/vercel.svg"
-                  alt="Powered by Vercel"
-                  width="212"
-                  height="44"
-                />
-              </a>
-            </div> */}
           </div>
-
+{/* 
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {navigation.map((item, index) => (
@@ -61,7 +42,7 @@ export default function Footer() {
                 </Link>
               ))}
             </div>
-          </div>
+          </div> */}
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {legal.map((item, index) => (
