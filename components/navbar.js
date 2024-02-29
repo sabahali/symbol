@@ -2,7 +2,7 @@
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image"
-import { Disclosure } from "@headlessui/react";
+import { Disclosure, Transition } from "@headlessui/react";
 import { login } from "@/actions/login";
 
 const Navbar = () => {
@@ -30,10 +30,11 @@ const Navbar = () => {
   ]
 
   return (
-    <div className="w-full">
+    <div className="w-full z-50">
       <nav className="container px-5 relative flex flex-wrap items-center justify-between pt-8 pb-0 mx-auto lg:justify-between xl:px-0">
         {/* Logo  */}
         <Disclosure>
+
           {({ open }) => (
             <>
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
@@ -74,30 +75,38 @@ const Navbar = () => {
                     )}
                   </svg>
                 </Disclosure.Button>
+                <Transition
+                  enter="transition duration-100 ease-out"
+                  enterFrom="transform scale-95 opacity-0"
+                  enterTo="transform scale-100 opacity-100"
+                  leave="transition duration-75 ease-out"
+                  leaveFrom="transform scale-100 opacity-100"
+                  leaveTo="transform scale-95 opacity-0"
+                >
+                  <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
+                    <>
+                      {navLinks.map((item, index) => (
+                        <a key={index} href={`${item.link}`} className="w-full  dark:hover:text-slate-50 px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none dark:focus:text-slate-50">
+                          {item.text}
+                        </a>
 
-                <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
-                  <>
-                    {navLinks.map((item, index) => (
-                      <a key={index} href={`${item.link}`} className="w-full  dark:hover:text-slate-50 px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none dark:focus:text-slate-50">
-                        {item.text}
-                      </a>
-
-                    ))}
-                    {/* <Link href='/dashboard'>
+                      ))}
+                      {/* <Link href='/dashboard'>
                       <span className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
                         Dashboard</span>
 
                     </Link> */}
-                    {
-                      <a  onClick={async () => {
-                        await login('/dashboard')
-                      }} className="w-full select-none hover:cursor-pointer dark:hover:text-slate-50 px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none dark:focus:text-slate-50">Signin</a>
-                    }
-                    <span className="px-4 py-2 w-full">
-                      <ThemeChanger />
-                    </span>
-                  </>
-                </Disclosure.Panel>
+                      {
+                        <a onClick={async () => {
+                          await login('/dashboard')
+                        }} className="w-full select-none hover:cursor-pointer dark:hover:text-slate-50 px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none dark:focus:text-slate-50">Signin</a>
+                      }
+                      <span className="px-4 py-2 w-full">
+                        <ThemeChanger />
+                      </span>
+                    </>
+                  </Disclosure.Panel>
+                  </Transition>
               </div>
             </>
           )}

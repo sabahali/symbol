@@ -1,7 +1,7 @@
 
 import Hero from "../components/hero";
 import SectionTitle from "../components/sectionTitle";
-import { benefitOne} from "../components/data";
+import { benefitOne } from "../components/data";
 import Video from "../components/video";
 import Benefits from "../components/benefits";
 import Footer from "../components/footer";
@@ -15,12 +15,14 @@ export default async function Home() {
 
   return (
     <div className="p-0">
-      <div className="lg:px-2 h-screen ">
 
+      <div className="lg:px-2 ">
         <Navbar />
+      </div>
+      <div className="h-screen">
         <Hero />
       </div>
-      <Features/>
+      <Features />
       <SectionTitle
         id='courses'
         pretitle="courses"
@@ -34,7 +36,7 @@ export default async function Home() {
         pretitle="Watch a video"
         id="company"
         title="Learn how to fullfil your needs">
-         &nbsp;
+        &nbsp;
       </SectionTitle>
       <Video />
       <SectionTitle
