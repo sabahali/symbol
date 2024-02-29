@@ -15,6 +15,7 @@ export default async function serverNav (){
 
     return (
         <Navbar fluid rounded>
+          <NavbarToggle />
           <NavbarBrand>
             {/* <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" /> */}
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Symbol Academy</span>
@@ -33,7 +34,7 @@ export default async function serverNav (){
               </DropdownHeader>
               <NavSignout/>
             </Dropdown>
-            <NavbarToggle />
+            
           </div>
             <Collapse role={role} />
         </Navbar>

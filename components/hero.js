@@ -110,7 +110,7 @@ const Hero = () => {
               <TextGenerateEffect words={subheading} />
             </div>
 
-            <motion.div className="flex"
+            <motion.div className="flex pt-3  md:pt-4"
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -130,7 +130,7 @@ const Hero = () => {
                 onClick={async () => {
                   await login('/dashboard/apply')
                 }}
-                className="px-4 py-2 md:px-6 mt-2 text-base md:py-3 md:mt-4 sm:text-lg font-medium text-center text-white bg-blue-600 hover:bg-blue-800 rounded-md ">
+                className="px-4 py-2 md:px-6  text-base md:py-3  sm:text-lg font-medium text-center text-white bg-blue-600 hover:bg-blue-800 rounded-md ">
                 Register Now
               </button>
               {/* <a
