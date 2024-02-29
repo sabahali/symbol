@@ -1,8 +1,5 @@
 import type { NextAuthConfig } from "next-auth";
 import NextAuth from "next-auth";
-import Google from "next-auth/providers/google";
-import getUser from "./actions/getUser";
-import createUser from "./actions/createUser";
 import { authConfig } from './auth.config';
 import { clientPromise } from "./mongoose/mongoclient";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";

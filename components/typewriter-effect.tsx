@@ -127,7 +127,7 @@ export const TypewriterEffectSmooth = ({
               {word.text.map((char, index) => (
                 <span
                   key={`char-${index}`}
-                  className={cn(`dark:text-white text-black `, word.className)}
+                  className={cn(`dark:text-slate-200 text-slate-700 `, word.className)}
                 >
                   {char}
                 </span>
@@ -148,17 +148,17 @@ export const TypewriterEffectSmooth = ({
           width: "0%",
         }}
         whileInView={{
-          width: "fit-content",
-          
+          width: "fit-content",         
         }}
         transition={{
           duration: 2,
           ease: "linear",
           delay: 1,
         }}
+        viewport={{once:true}}
       >
         <div
-          className="text-xs sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold"
+          className="text-gray-800 leading-10 flex flex-nowrap text-2xl sm:text-3xl lg:text-4xl lg:leading-tight xl:text-5xl   dark:text-white"
           style={{
             whiteSpace: "nowrap",
           }}
@@ -166,7 +166,7 @@ export const TypewriterEffectSmooth = ({
           {renderWords()}{" "}
         </div>{" "}
       </motion.div>
-      <motion.span
+      {/* <motion.span
         initial={{
           opacity: 0,
         }}
@@ -183,7 +183,7 @@ export const TypewriterEffectSmooth = ({
           "block rounded-sm w-[4px]  h-4 sm:h-6 xl:h-12 bg-blue-500",
           cursorClassName
         )}
-      ></motion.span>
+      ></motion.span> */}
     </div>
   );
 };

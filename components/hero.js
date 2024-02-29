@@ -1,100 +1,96 @@
 "use client"
 import Container from "./container";
 import { motion } from "framer-motion";
-import { TypewriterEffect } from "./typewriter-effect";
+import { TypewriterEffect, TypewriterEffectSmooth } from "./typewriter-effect";
 import { TextGenerateEffect } from "./text-generate-effect";
-import { InfiniteMovingCards } from "./infinite-moving-cards";
 import HeroAnim from '@/Lottiefiles/HeroAnim'
-import { useCurentUser } from "@/hooks/useCurrentUser";
-import { redirect } from "next/navigation";
 import { login } from "@/actions/login";
-const testimonials = [
-  {
-    quote:
-      `To be a global leader in groundbreaking research, innovation, and knowledge
-      creation, driving positive societal change and contributing to the advancement of human
-      understanding across diverse fields.`,
-    title: "Vision",
-  },
-  {
-    quote: `Our mission is to cultivate a dynamic and collaborative research environment that
-    fosters curiosity, innovation, and excellence. Through rigorous inquiry, interdisciplinary
-    collaboration, and the pursuit of transformative discoveries.`,
-    title: "Mission",
-  },
-  {
-    quote: `Challenge the frontiers of knowledge by engaging in cutting-edge
-    research that addresses complex, real-world challenges and creates new avenues for
-    exploration.`,
-    title: "Push Boundaries",
-  },
-  {
-    quote:
-      `Nurture a culture of intellectual freedom, creativity, and inclusivity
-     that empowers researchers at all stages of their careers to excel and make a meaningful
-     impact.`,
-    title: "Empower Researchers",
-  },
-  {
-    quote: `Foster a vibrant ecosystem of interdisciplinary
-    collaboration, bringing together diverse expertise to tackle multifaceted problems and create
-    holistic solutions.`,
-    title: "Collaborate Across Disciplines",
-  },
-  {
-    quote: `Catalyse innovation by translating research findings into tangible
-    applications, technologies, and solutions that benefit society, industry, and the world at
-    large.`,
-    title: "Drive Innovation",
-  },
-  {
-    quote: `Play a pivotal role in educating the next generation of researchers
-    and thought leaders, instilling a passion for inquiry, critical thinking, and ethical research
-    practices.`,
-    title: "Educate and Inspire",
-  },
-  {
-    quote: `Play a pivotal role in educating the next generation of researchers
-    and thought leaders, instilling a passion for inquiry, critical thinking, and ethical research
-    practices.`,
-    title: "Educate and Inspire",
-  },
-  {
-    quote: `Forge international partnerships and networks to share
-    knowledge, collaborate on global challenges, and contribute to the advancement of science
-    and humanity worldwide.`,
-    title: "Promote Global Engagement",
-  },
-  {
-    quote: `Conduct research with the utmost integrity, adhering to ethical
-    principles, transparency, and social responsibility in all aspects of our work.`,
-    title: "Uphold Ethical Values",
-  },
-];
-const words = [
-  {
-    text: "S",
-  },
-  {
-    text: "Y",
-  },
-  {
-    text: "M",
-  },
-  {
-    text: "B",
-  },
-  {
-    text: "O",
-    className: "text-blue-500 dark:text-blue-500",
-  },
-  {
-    text: "L",
-  }
 
-];
+
 const Hero = () => {
-  const subheading = `Fostering Innovative Research Academy`
+  const words = [
+    {
+      text: "S",
+    },
+    {
+      text: "Y",
+    },
+    {
+      text: "M",
+    },
+    {
+      text: "B",
+    },
+    {
+      text: "O",
+      className: "text-blue-500 dark:text-blue-500",
+    },
+    {
+      text: "L",
+    }
+  
+  ];
+  const words2 = [
+    {
+      text: "R",
+      // className: "text-blue-500 dark:text-blue-500"
+    },
+    {
+      text: "E",
+      // className: "text-blue-500 dark:text-blue-500"
+    },
+    {
+      text: "S",
+      // className: "text-blue-500 dark:text-blue-500"
+    },
+    {
+      text: "E",
+      // className: "text-blue-500 dark:text-blue-500"
+    },
+    {
+      text: "A",
+      // className: "text-blue-500 dark:text-blue-500"
+  
+    },
+    {
+      text: "R",
+      // className: "text-blue-500 dark:text-blue-500"
+    },
+    {
+      text: "C",
+      // className: "text-blue-500 dark:text-blue-500"
+    },
+    {
+      text: "H",
+      // className: "text-blue-500 dark:text-blue-500"
+    },
+    {
+      text: " ",
+    },
+    {
+      text: "A",
+    },
+    {
+      text: "C",
+    },
+    {
+      text: "A",
+    },
+    {
+      text: "D",
+    },
+    {
+      text: "E",
+    },
+    {
+      text: "M",
+    },
+    {
+      text: "Y",
+    },
+  
+  ];
+  const subheading = `Fostering Innovative Research`
   return (
     <>
       <Container className="flex flex-wrap items-center justify-center w-full min-h-[70vh] md:min-h-[80vh]">
@@ -105,7 +101,11 @@ const Hero = () => {
               <TypewriterEffect words={words} />
 
             </div>
-            <div className="py-5  dark:text-gray-300">
+            <div className="pt-1">
+              <TypewriterEffectSmooth words={words2} />
+            </div>
+
+            <div className="pt-1 dark:text-gray-300 space-y-5">
 
               <TextGenerateEffect words={subheading} />
             </div>
@@ -117,8 +117,7 @@ const Hero = () => {
               transition={{
                 duration: 0.3,
                 ease: [0, 0.71, 0.2, 1.01],
-
-                scale: {
+               scale: {
                   type: "spring",
                   damping: 5,
                   stiffness: 100,
@@ -131,7 +130,7 @@ const Hero = () => {
                 onClick={async () => {
                   await login('/dashboard/apply')
                 }}
-                className="px-4 py-2 md:px-6 text-base md:py-3 md:mt-4 sm:text-lg font-medium text-center text-white bg-blue-600 hover:bg-blue-800 rounded-md ">
+                className="px-4 py-2 md:px-6 mt-2 text-base md:py-3 md:mt-4 sm:text-lg font-medium text-center text-white bg-blue-600 hover:bg-blue-800 rounded-md ">
                 Register Now
               </button>
               {/* <a
@@ -155,7 +154,7 @@ const Hero = () => {
             </motion.div>
           </div>
         </div>
-        <div className=" container  flex flex-col flex-wrap justify-center pt-0  lg:pt-[10vh] items-center  sm:w-[70vw]  w-full h-full xl:w-[40%] md:w-2/3 2xl:w-1/2">
+        <div className="flex flex-col flex-wrap justify-center pt-0  lg:pt-[10vh] items-center  sm:w-[80vw]  w-full h-full xl:w-[40%] md:w-2/3 2xl:w-1/2 container">
 
           <motion.div
 
@@ -176,36 +175,12 @@ const Hero = () => {
               }
             }}
           >
-            {/* <Image
-                src={heroImg}
-                width="616"
-                height="600"
-                className={"object-cover xs:w-[10%] sm:w-[100%] md:w-[80%] lg:w-[100%]" }
-                alt="Hero Illustration"
-                loading="eager"
-                placeholder="blur"
-              /> */}
-
-
             <HeroAnim />
           </motion.div>
         </div>
 
       </Container>
-      <Container>
-        <div id='features' className=" flex flex-col w-full justify-around items-center h-screen overflow-hidden">
-          <InfiniteMovingCards
-            items={testimonials}
-            direction="right"
-            speed="slow"
-          />
-          <InfiniteMovingCards
-            items={testimonials}
-            direction="left"
-            speed="slow"
-          />
-        </div>
-      </Container>
+
     </>
   );
 }

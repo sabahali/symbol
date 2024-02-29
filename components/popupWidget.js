@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { Disclosure, Transition } from "@headlessui/react";
-import sendEmail from "@/actions/sendEmail";
 import sendGmail from "@/actions/sendgmail";
 
 const PopupWidget = () => {

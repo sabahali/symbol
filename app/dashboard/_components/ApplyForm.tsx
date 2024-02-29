@@ -24,6 +24,7 @@ function ApplyForm({ setSuccess, setError,update,session }: any) {
             const resp = await applyform(rawFormData)
             if (resp?.success == true) {
                 setSuccess(true)
+                await update({...session,applied:true})
                 try{
                 await gmailForm(rawFormData)
                 }catch(err){
@@ -35,8 +36,7 @@ function ApplyForm({ setSuccess, setError,update,session }: any) {
         } catch (err) {
             setError(true)
         } finally {
-            setLoading(false)
-            await update({...session,applied:true})
+            setLoading(false)           
             router.refresh()
         }
 

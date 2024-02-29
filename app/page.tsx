@@ -10,15 +10,17 @@ import Cta from "../components/cta";
 import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
 import Navbar from "@/components/navbar";
+import Features from '@/components/Features'
 export default async function Home() {
 
   return (
     <div className="p-0">
-      <div className="lg:px-2">
+      <div className="lg:px-2 h-screen ">
 
         <Navbar />
+        <Hero />
       </div>
-      <Hero />
+      <Features/>
       <SectionTitle
         id='courses'
         pretitle=" "

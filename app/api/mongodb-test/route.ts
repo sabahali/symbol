@@ -10,6 +10,6 @@ export async function GET() {
     })
     return NextResponse.json({ message: "Connected!" });
   } catch (e) {
-    return NextResponse.json(e, { status: 500 });
+    return NextResponse.json({ status: 500 });
   }
 }
