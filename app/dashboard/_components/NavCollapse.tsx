@@ -19,14 +19,14 @@ export default function NavCollapse({role}:props) {
     <Link href="/dashboard" className={pathname === '/dashboard' ? linktheme.active.on : linktheme.active.off}>Home</Link>
     {role === 'student' ?
                   <>
-                      <Link href="/dashboard/apply" className={pathname === '/dashboard/apply' ? linktheme.active.on : linktheme.active.off}>Apply</Link>
-                      <Link href="/dashboard/contact" className={pathname === '/dashboard/contact' ? linktheme.active.on : linktheme.active.off}>Contact</Link>
+                      <Link href="/dashboard/apply" prefetch={true} className={pathname === '/dashboard/apply' ? linktheme.active.on : linktheme.active.off}>Apply</Link>
+                      <Link href="/dashboard/contact" prefetch={true} className={pathname === '/dashboard/contact' ? linktheme.active.on : linktheme.active.off}>Contact</Link>
                       {/* <Navbar> </Navbar>
                       <Navbar> <Link href="/dashboard/contact">Contact</Link></Navbar> */}
                   </>
                   : role === 'teacher' ?
                       <>
-                          <Link href="/dashboard/students" className={pathname === '/dashboard/students' ? linktheme.active.on : linktheme.active.off}>Students</Link>
+                          <Link href="/dashboard/students" prefetch={true} className={pathname === '/dashboard/students' ? linktheme.active.on : linktheme.active.off}>Students</Link>
 
                       </>
                       : null
