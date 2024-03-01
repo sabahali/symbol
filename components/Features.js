@@ -66,18 +66,18 @@ export default function Features() {
         },
       ];
   return (
-    <Container>
-    <div id='features' className=" flex flex-col w-full justify-evenly items-center h-screen overflow-hidden">
+    <Container className=''>
+    <div id='features' className=" flex flex-col w-full h-[50vh] justify-start items-center overflow-hidden">
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
         speed="slow"
       />
-      <InfiniteMovingCards
+      {/* <InfiniteMovingCards
         items={testimonials}
         direction="left"
         speed="slow"
-      />
+      /> */}
     </div>
   </Container>
   )
