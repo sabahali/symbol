@@ -1,6 +1,7 @@
 import React from 'react'
 import Container from "./container";
 import { InfiniteMovingCards } from "./infinite-moving-cards";
+import Infintescroll2 from './Infinitescroll2';
 export default function Features() {
     const testimonials = [
         {
@@ -67,12 +68,13 @@ export default function Features() {
       ];
   return (
     <Container className=''>
-    <div id='features' className=" flex w-full justify-center items-start overflow-hidden">
+    <div id='features' className=" flex w-full justify-center items-start overflow-hidden relative">
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
         speed="slow"
       />
+
       {/* <InfiniteMovingCards
         items={testimonials}
         direction="left"

@@ -5,7 +5,7 @@ export default function hero() {
         <section className='grid grid-cols-1 md:grid-cols-3 w-full max-h-full '>
             <div className=' w-full p-10 flex flex-col justify-center items-start shadow-xl'>
 
-                <h1 className="font-bold text-5xl text-blue-950 dark:text-slate-200 ">Elizabath Roy</h1>
+                <h1 className="font-bold text-5xl text-blue-950 dark:text-slate-200 ">Elizebath Roy</h1>
                 <h2 className='text-xl mt-2 text-blue-800 dark:text-slate-400'>Academic Director- Psychology</h2>
             </div>
             <div className='w-full flex-cols items-center  justify-start text-justify col-span-2 h-full  '>

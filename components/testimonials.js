@@ -14,27 +14,10 @@ const Testimonials = () => {
   return (
     <Container>
       <div className=" px-8 grid gap-10 lg:grid-cols-2 xl:grid-cols-3" >
-        <Link href='/elizabathroy'>
-          <div className="lg:col-span-2 xl:col-auto hover:shadow-lg cursor-pointer">
-            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-              <p className="text-2xl leading-normal ">
-                Dedicated <Mark>professional</Mark> with a strong academic background and a passion for research and teaching in the field of psychology
-              </p>
-
-              <Avatar
-                image={eliz}
-                name="Elizabath Roy"
-                title="Academic Director- Psychology"
-
-              />
-            </div>
-          </div>
-        </Link>
-
-        <div className=" hover:shadow-lg cursor-pointer">
+      <div className=" hover:shadow-lg cursor-pointer">
           <Link href='/thasneema'>
             <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-              <p className="text-2xl leading-normal ">
+              <p className="text-base md:text-md lg:text-xl xl:text-2xl leading-normal ">
                 A dynamic <Mark>researcher</Mark> and academician dedicated to societal well-being
               </p>
 
@@ -46,11 +29,30 @@ const Testimonials = () => {
             </div>
           </Link>
         </div>
+        <Link href='/elizabathroy'>
+          
+          <div className="lg:col-span-2 xl:col-auto hover:shadow-lg cursor-pointer">
+            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+              <p className="text-base md:text-md lg:text-xl xl:text-2xl leading-normal ">
+                Dedicated <Mark>professional</Mark> with a strong academic background and a passion for research and teaching in the field of psychology
+              </p>
+
+              <Avatar
+                image={eliz}
+                name="Elizebath Roy"
+                title="Academic Director- Psychology"
+
+              />
+            </div>
+          </div>
+        </Link>
+
+
         <div className=" hover:shadow-lg cursor-pointer">
           <Link href='/sherin'>
 
             <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-              <p className="text-2xl leading-normal ">
+              <p className="text-base md:text-md lg:text-xl xl:text-2xl leading-normal ">
                 Dedicated consultant <Mark>psychologist</Mark> currently immersed in full-time Ph.D.
               </p>
 
@@ -80,7 +82,7 @@ function Avatar(props) {
         />
       </div>
       <div>
-        <div className="text-lg font-medium">{props.name}</div>
+        <div className="text-base md:text-md lg:text-lg xl:text-xl font-medium">{props.name}</div>
         <div className="text-gray-600 dark:text-gray-400">{props.title}</div>
       </div>
     </div>
