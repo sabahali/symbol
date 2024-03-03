@@ -97,7 +97,7 @@ const Hero = () => {
     <>
       <Container className="flex flex-wrap items-center justify-center w-full min-h-[70vh] md:min-h-[80vh]">
         <div id="home" className="flex p-8  items-center justify-start w-full xl:w-[60%] 2xl:w-1/2 mb-[10vh] sm:mb-0 ">
-          <div className="flex flex-col w-full justify-center items-start lg:pl-10">
+          <div className="flex flex-col w-full justify-center items-start lg:pl-10 ">
           
 
             <div className=" font-bold">

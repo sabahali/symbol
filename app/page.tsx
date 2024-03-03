@@ -35,12 +35,11 @@ export default async function Home() {
     // },
   ]
   return (
-    <div className="p-0">
-
+    <div className="p-0">     
+      <div className="h-screen">
       <div className="lg:px-2 ">
         <Navbar navLinks={navLinks} transition={true}/>
       </div>
-      <div className="h-screen">
         <Hero />
       </div>
       <Features />
