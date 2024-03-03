@@ -16,8 +16,8 @@ const Testimonials = () => {
       <div className=" px-8 grid gap-10 lg:grid-cols-2 xl:grid-cols-3" >
       <div className=" hover:shadow-lg cursor-pointer">
           <Link href='/thasneema'>
-            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-              <p className="text-base md:text-md lg:text-xl xl:text-2xl leading-normal ">
+            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-10 rounded-2xl py-10 dark:bg-trueGray-800">
+              <p className="text-base md:text-md lg:text-xl xl:text-xl leading-normal ">
                 A dynamic <Mark>researcher</Mark> and academician dedicated to societal well-being
               </p>
 
@@ -32,8 +32,8 @@ const Testimonials = () => {
         <Link href='/elizabathroy'>
           
           <div className="lg:col-span-2 xl:col-auto hover:shadow-lg cursor-pointer">
-            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-              <p className="text-base md:text-md lg:text-xl xl:text-2xl leading-normal ">
+            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-10 rounded-2xl py-10 dark:bg-trueGray-800">
+              <p className="text-base md:text-md lg:text-xl xl:text-xl leading-normal ">
                 Dedicated <Mark>professional</Mark> with a strong academic background and a passion for research and teaching in the field of psychology
               </p>
 
@@ -51,8 +51,8 @@ const Testimonials = () => {
         <div className=" hover:shadow-lg cursor-pointer">
           <Link href='/sherin'>
 
-            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-              <p className="text-base md:text-md lg:text-xl xl:text-2xl leading-normal ">
+            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-10 rounded-2xl py-10 dark:bg-trueGray-800">
+              <p className="text-base md:text-md lg:text-xl xl:text-xl leading-normal ">
                 Dedicated consultant <Mark>psychologist</Mark> currently immersed in full-time Ph.D.
               </p>
 
@@ -75,8 +75,8 @@ function Avatar(props) {
       <div className="flex-shrink-0 overflow-hidden rounded-full w-14 h-14">
         <Image
           src={props.image}
-          width="40"
-          height="40"
+          width="90"
+          height="90"
           alt="Avatar"
           placeholder="blur"
         />

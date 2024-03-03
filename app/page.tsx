@@ -38,10 +38,11 @@ export default function Home() {
     // },
   ]
   return (
-    <div className="p-0">
+    <div className="">
       <div className="sm:min-h-screen">
         <div className="lg:px-2 ">
-          <Navbar navLinks={navLinks} transition={false} />
+        <Navbar navLinks={navLinks} transition={false} />
+
         </div>
         <Hero />
       </div>

@@ -4,7 +4,6 @@ import ThemeChanger from "./DarkSwitch";
 import Image from "next/image"
 import { Disclosure, Transition } from "@headlessui/react";
 import { login } from "@/actions/login";
-
 const Navbar = ({navLinks,transition}) => {
   // const navLinks = [
   //   {
