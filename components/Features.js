@@ -67,7 +67,7 @@ export default function Features() {
       ];
   return (
     <Container className=''>
-    <div id='features' className=" flex flex-col w-full h-[50vh] justify-start items-center overflow-hidden">
+    <div id='features' className=" flex flex-col w-full justify-start items-center overflow-hidden">
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
