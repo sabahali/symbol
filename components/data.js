@@ -6,13 +6,11 @@ import {
   DocumentMagnifyingGlassIcon
 } from "@heroicons/react/24/solid";
 
-import benefitOneImg from "../public/img/benefit-one.png";
-import benefitTwoImg from "../public/img/benefit-two.png";
+
 
 const benefitOne = {
   title: "Research internship in Psychology",
   desc: "Explore diverse methodologies uncovering human behavior and cognition in psychological research.",
-  image: benefitOneImg,
   bullets: [
     {
       title: "Research: Overview",
@@ -40,7 +38,6 @@ const benefitOne = {
 const benefitTwo = {
   title: "Offer more benefits here",
   desc: "description to add ",
-  image: benefitTwoImg,
   bullets: [
     {
       title: "title",

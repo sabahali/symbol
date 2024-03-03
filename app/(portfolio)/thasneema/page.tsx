@@ -12,7 +12,7 @@ export default function page() {
     return (
         <div className='max-h-screen md:overflow-y-hidden'>
             <div className='lg:px-2'>
-                <Navbar navLinks={navLinks} />
+                <Navbar navLinks={navLinks} transition={false} />
             </div>
             <Hero/>
         </div>
