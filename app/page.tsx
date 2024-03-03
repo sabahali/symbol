@@ -48,7 +48,7 @@ export default function Home() {
       </div>
       {/* <motion.div whileInView={{ opacity: 1, left: 0 }} className="opacity-0 relative -left-[400px]"> */}
         <Features />
-      {/*  */}
+      {/* </motion.div> */}
 
         <SectionTitle
           id='courses'
@@ -57,10 +57,8 @@ export default function Home() {
 
         >
         </SectionTitle>
-      
 
         <Benefits data={benefitOne} />
-      
       {/* <Benefits imgPos="right" data={benefitTwo} /> */}
 
         <SectionTitle
@@ -69,10 +67,8 @@ export default function Home() {
           title="Learn More">
           &nbsp;
         </SectionTitle>
-      
 
         <Video />
-      
 
         <SectionTitle
           id="team"
@@ -81,10 +77,8 @@ export default function Home() {
         >
           &nbsp;
         </SectionTitle>
-      
 
         <Testimonials />
-      
       {/* <SectionTitle pretitle="FAQ" title="Frequently Asked Questions" id="faq">
         Possible
       </SectionTitle> */}
