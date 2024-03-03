@@ -3,17 +3,11 @@ import Container from "./container";
 import { motion } from "framer-motion";
 import { TypewriterEffect, TypewriterEffectSmooth } from "./typewriter-effect";
 import { TextGenerateEffect } from "./text-generate-effect";
-// import HeroAnim from '@/Lottiefiles/HeroAnim'
 import { login } from "@/actions/login";
-import { Suspense, lazy, useEffect, useState } from "react";
-import Lottie from "react-lottie-player";
+import { Suspense, lazy } from "react";
 
 
 const Hero = () => {
-  // const [animationData, setAnimationData] = useState();
-  // useEffect(() => {
-  //   import('@/Lottiefiles/welcome.json').then(setAnimationData);
-  // }, []);
   const MyLottieAnimation = lazy(() => import('@/Lottiefiles/HeroAnim'));
 
   const words = [
@@ -169,7 +163,7 @@ const Hero = () => {
           >
             {/* {animationData ? <Lottie animationData={animationData} loop play/> : <>Loading</>} */}
             {/* <HeroAnim /> */}
-            <Suspense fallback = {<>Loading</>}>
+            <Suspense fallback = {<>Loading..</>}>
               <MyLottieAnimation play/>
             </Suspense>
           </motion.div>

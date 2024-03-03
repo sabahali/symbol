@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "@/components/navbar";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,6 +17,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" suppressHydrationWarning={true} >
       <body suppressHydrationWarning={true} className={`${inter.className} w-full h-full bg-gradient-to-r from-indigo-100 to-indigo-200 dark:from-zinc-700 dark:to-zinc-800 `}>
@@ -24,7 +27,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-            {children}
+          {children}
 
 
         </ThemeProvider></body>

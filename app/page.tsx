@@ -12,12 +12,33 @@ import PopupWidget from "../components/popupWidget";
 import Navbar from "@/components/navbar";
 import Features from '@/components/Features'
 export default async function Home() {
-
+  const navLinks = [
+    {
+      text: "Features",
+      link: "#features"
+    },
+    {
+      text: "Courses",
+      link: "#courses"
+    },
+    {
+      text: "Company",
+      link: "#company"
+    },
+    {
+      text: "Founders",
+      link: "#founders"
+    },
+    // {
+    //   text: "FaQ",
+    //   link: "#faq"
+    // },
+  ]
   return (
     <div className="p-0">
 
       <div className="lg:px-2 ">
-        <Navbar />
+        <Navbar navLinks={navLinks}/>
       </div>
       <div className="h-screen">
         <Hero />
@@ -27,7 +48,7 @@ export default async function Home() {
         id='courses'
         pretitle="courses"
         title="Available Research Courses"
-
+        className = "mt-5"
       >
       </SectionTitle>
       <Benefits data={benefitOne} />
@@ -35,21 +56,22 @@ export default async function Home() {
       <SectionTitle
         pretitle="Watch a video"
         id="company"
-        title="Learn how to fullfil your needs">
+        title="Learn More">
         &nbsp;
       </SectionTitle>
       <Video />
       <SectionTitle
+        id="founders"
         pretitle="Founders"
-        title="Here's what our customers said">
+        title="Meet Our Founders">
         &nbsp;
       </SectionTitle>
       <Testimonials />
-      <SectionTitle pretitle="FAQ" title="Frequently Asked Questions" id="faq">
+      {/* <SectionTitle pretitle="FAQ" title="Frequently Asked Questions" id="faq">
         Possible
-      </SectionTitle>
-      <Faq />
-      <Cta />
+      </SectionTitle> */}
+      {/* <Faq /> */}
+      {/* <Cta /> */}
       <Footer />
       <PopupWidget />
     </div>

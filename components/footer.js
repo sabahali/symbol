@@ -29,9 +29,9 @@ export default function Footer() {
               </Link>
             </div>
 
-            <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
+            {/* <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
               What to write ?
-            </div>
+            </div> */}
           </div>
 {/* 
           <div>

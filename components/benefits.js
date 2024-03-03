@@ -1,30 +1,21 @@
 "use client"
 import Image from "next/image";
-import React from "react";
+import React ,{ Suspense, lazy } from "react";
 import Container from "./container";
-import Psych from '@/Lottiefiles/Psych'
 const Benefits = (props) => {
   const { data } = props;
+  const PsychLottie = lazy(() => import('@/Lottiefiles/Psych'));
   return (
     <>
       <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap ">
         <div
           className={`flex items-center justify-center w-full lg:w-1/2 ${props.imgPos === "right" ? "lg:order-1" : ""
             }`}>
-          <div>
-            {/* <Image
-              src={data.image}
-              width="521"
-              height="auto"
-              alt="Benefits"
-              className={"object-cover mt-[10vh]"}
-              placeholder="blur"
-              blurDataURL={data.image.src}
-            /> */}
-          </div>
-          <div className="w-3/2  pt-10 lg:w-[40vw]">
 
-            <Psych />
+          <div className="w-3/2  pt-10 lg:w-[40vw]">
+            <Suspense callback = {<>Loading ...</>}>
+              <PsychLottie play/>
+            </Suspense>
           </div>
         </div>
 

@@ -7,55 +7,65 @@ import Container from "./container";
 import userOneImg from "../public/img/user1.jpg";
 import userTwoImg from "../public/img/user2.jpg";
 import userThreeImg from "../public/img/user3.jpg";
-
-const Testimonials  = () => {
+import eliz from "../public/img/eliz.png"
+import sherin from "../public/img/sherin.png"
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+const Testimonials = () => {
+  const router = useRouter()
   return (
     <Container>
-      <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
-        <div className="lg:col-span-2 xl:col-auto">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-            <p className="text-2xl leading-normal ">
-              Share a real <Mark>testimonial</Mark>
-              that hits some of your benefits from one of your popular customer.
-            </p>
+      <div className=" px-8 grid gap-10 lg:grid-cols-2 xl:grid-cols-3" >
+        <Link href='/elizabathroy'>
+          <div className="lg:col-span-2 xl:col-auto hover:shadow-lg cursor-pointer">
+            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+              <p className="text-2xl leading-normal ">
+                Dedicated <Mark>professional</Mark> with a strong academic background and a passion for research and teaching in the field of psychology
+              </p>
 
-            <Avatar
-              image={userOneImg}
-              name="Name"
-              title="Designation "
-              
-            />
+              <Avatar
+                image={eliz}
+                name="Elizabath Roy"
+                title="Academic Director- Psychology"
+
+              />
+            </div>
           </div>
+        </Link>
+
+        <div className=" hover:shadow-lg cursor-pointer">
+          <Link href='/thasneema'>
+            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+              <p className="text-2xl leading-normal ">
+                A dynamic <Mark>researcher</Mark> and academician dedicated to societal well-being
+              </p>
+
+              <Avatar
+                image={userThreeImg}
+                name="Thasneema"
+                title="Researcher and Academician"
+              />
+            </div>
+          </Link>
         </div>
-        <div className="">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-            <p className="text-2xl leading-normal ">
-              Make sure you only pick the <Mark>right sentence</Mark>
-              to keep it short and simple.
-            </p>
+        <div className=" hover:shadow-lg cursor-pointer">
+          <Link href='/sherin'>
 
-            <Avatar
-              image={userTwoImg}
-              name="Name"
-              title="Designation"
-            />
-          </div>
-        </div>
-        <div className="">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-            <p className="text-2xl leading-normal ">
-              Extra testimonial 
-            </p>
+            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+              <p className="text-2xl leading-normal ">
+                Dedicated consultant <Mark>psychologist</Mark> currently immersed in full-time Ph.D.
+              </p>
 
-            <Avatar
-              image={userThreeImg}
-              name="Name"
-              title="Designation"
-            />
-          </div>
+              <Avatar
+                image={sherin}
+                name="Sherin P"
+                title="Consultant Psychologist"
+              />
+            </div>
+          </Link>
         </div>
       </div>
-    </Container>
+    </Container >
   );
 }
 

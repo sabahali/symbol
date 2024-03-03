@@ -5,29 +5,29 @@ import Image from "next/image"
 import { Disclosure, Transition } from "@headlessui/react";
 import { login } from "@/actions/login";
 
-const Navbar = () => {
-  const navLinks = [
-    {
-      text: "Register",
-      link: "#home"
-    },
-    {
-      text: "Features",
-      link: "#features"
-    },
-    {
-      text: "Courses",
-      link: "#courses"
-    },
-    {
-      text: "Company",
-      link: "#company"
-    },
-    {
-      text: "FaQ",
-      link: "#faq"
-    },
-  ]
+const Navbar = ({navLinks}) => {
+  // const navLinks = [
+  //   {
+  //     text: "Register",
+  //     link: "#home"
+  //   },
+  //   {
+  //     text: "Features",
+  //     link: "#features"
+  //   },
+  //   {
+  //     text: "Courses",
+  //     link: "#courses"
+  //   },
+  //   {
+  //     text: "Company",
+  //     link: "#company"
+  //   },
+  //   {
+  //     text: "FaQ",
+  //     link: "#faq"
+  //   },
+  // ]
 
   return (
     <div className="w-full z-50">
