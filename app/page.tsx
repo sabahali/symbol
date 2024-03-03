@@ -46,10 +46,9 @@ export default function Home() {
         </div>
         <Hero />
       </div>
-      <motion.div whileInView={{ opacity: 1, scale: 1, left: 0 }} className="opacity-0 scale-0 relative -left-[400px]">
+      {/* <motion.div whileInView={{ opacity: 1, scale: 1, left: 0 }} className="opacity-0 scale-0 relative -left-[400px]"> */}
         <Features />
-      </motion.div>
-      <motion.div whileInView={{ opacity: 1, scale: 1, left: 0 }} className="opacity-0 scale-0 relative -left-[400px]">
+      
 
         <SectionTitle
           id='courses'
@@ -58,13 +57,11 @@ export default function Home() {
 
         >
         </SectionTitle>
-      </motion.div>
-      <motion.div whileInView={{ opacity: 1, scale: 1, left: 0 }} className="opacity-0 scale-0 relative -left-[400px]">
+      
 
         <Benefits data={benefitOne} />
-      </motion.div>
+      
       {/* <Benefits imgPos="right" data={benefitTwo} /> */}
-      <motion.div whileInView={{ opacity: 1, scale: 1, left: 0 }} className="opacity-0 scale-0 relative -left-[400px]">
 
         <SectionTitle
           pretitle="Watch a video"
@@ -72,12 +69,10 @@ export default function Home() {
           title="Learn More">
           &nbsp;
         </SectionTitle>
-      </motion.div>
-      <motion.div whileInView={{ opacity: 1, scale: 1, left: 0 }} className="opacity-0 scale-0 relative -left-[400px]">
+      
 
         <Video />
-      </motion.div>
-      <motion.div whileInView={{ opacity: 1, scale: 1, left: 0 }} className="opacity-0 scale-0 relative -left-[400px]">
+      
 
         <SectionTitle
           id="team"
@@ -86,11 +81,10 @@ export default function Home() {
         >
           &nbsp;
         </SectionTitle>
-      </motion.div>
-      <motion.div whileInView={{ opacity: 1, scale: 1, left: 0 }} className="opacity-0 scale-0 relative -left-[400px]">
+      
 
         <Testimonials />
-      </motion.div>
+      
       {/* <SectionTitle pretitle="FAQ" title="Frequently Asked Questions" id="faq">
         Possible
       </SectionTitle> */}
