@@ -6,7 +6,7 @@ const Video = () => {
   const [playVideo, setPlayVideo] = useState(false);
   return (
     <Container>
-      <div className="w-full  md:p-0 max-w-4xl mx-auto overflow-hidden lg:mb-20 rounded-2xl mb-14 ">
+      <div className="w-full  md:p-0 max-w-4xl mx-auto overflow-hidden lg:mb-20 rounded-2xl mb-20 ">
         <div
           onClick={() => setPlayVideo(!playVideo)}
           className="relative bg-indigo-300 cursor-pointer aspect-w-16 aspect-h-9 bg-gradient-to-tr from-purple-400 to-indigo-700">

@@ -27,7 +27,6 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-
           {children}
 
 

@@ -140,7 +140,7 @@ const Hero = () => {
             </motion.div>
           </div>
         </div>
-        <div className="flex flex-col flex-wrap justify-center pt-0  lg:pt-[10vh] items-center  sm:w-[80vw]  w-full h-full xl:w-[40%] md:w-2/3 2xl:w-1/2 container">
+        <div className="flex flex-col flex-wrap justify-center sm:pt-0  lg:pt-[10vh] items-center  sm:w-[80vw]  w-full h-full xl:w-[40%] md:w-2/3 2xl:w-1/2 container">
 
           <motion.div
 

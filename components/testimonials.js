@@ -5,7 +5,7 @@ import React from "react";
 import Container from "./container";
 
 import userOneImg from "../public/img/user1.jpg";
-import userTwoImg from "../public/img/user2.jpg";
+import thasneema from "../public/img/thasneema.png";
 import userThreeImg from "../public/img/user3.jpg";
 import eliz from "../public/img/eliz.png"
 import sherin from "../public/img/sherin.png"
@@ -41,7 +41,7 @@ const Testimonials = () => {
               </p>
 
               <Avatar
-                image={userThreeImg}
+                image={thasneema}
                 name="Thasneema"
                 title="Researcher and Academician"
               />
