@@ -38,7 +38,7 @@ export default async function Home() {
     <div className="p-0">
 
       <div className="lg:px-2 ">
-        <Navbar navLinks={navLinks}/>
+        <Navbar navLinks={navLinks} transition={true}/>
       </div>
       <div className="h-screen">
         <Hero />
@@ -48,7 +48,7 @@ export default async function Home() {
         id='courses'
         pretitle="courses"
         title="Available Research Courses"
-        className = "mt-5"
+        
       >
       </SectionTitle>
       <Benefits data={benefitOne} />
@@ -61,11 +61,12 @@ export default async function Home() {
       </SectionTitle>
       <Video />
       <SectionTitle
-        id="founders"
-        pretitle="Founders"
-        title="Meet Our Founders">
-        &nbsp;
-      </SectionTitle>
+          id="founders"
+          pretitle="Founders"
+          title="Meet Our Founders"
+        >
+          &nbsp;
+        </SectionTitle>
       <Testimonials />
       {/* <SectionTitle pretitle="FAQ" title="Frequently Asked Questions" id="faq">
         Possible
