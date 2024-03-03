@@ -45,10 +45,10 @@ export default function Home() {
         </div>
         <Hero />
       </div>
-      <motion.div whileInView={{ opacity: 1, scale: 1, top: 0 }} className="o opacity-0 scale-0 relative top-[100px]">
+      <motion.div whileInView={{ opacity: 1, top: 0 }} className="o opacity-0 relative top-[100px]">
         <Features />
       </motion.div>
-      <motion.div whileInView={{ opacity: 1, scale: 1, top: 0 }} className="o opacity-0 scale-0 relative top-[100px]">
+      <motion.div whileInView={{ opacity: 1, top: 0 }} className="o opacity-0 relative top-[100px]">
 
         <SectionTitle
           id='courses'
@@ -58,12 +58,12 @@ export default function Home() {
         >
         </SectionTitle>
       </motion.div>
-      <motion.div whileInView={{ opacity: 1, scale: 1, top: 0 }} className="o opacity-0 scale-0 relative top-[100px]">
+      <motion.div whileInView={{ opacity: 1, top: 0 }} className="o opacity-0 relative top-[100px]">
 
         <Benefits data={benefitOne} />
       </motion.div>
       {/* <Benefits imgPos="right" data={benefitTwo} /> */}
-      <motion.div whileInView={{ opacity: 1, scale: 1, top: 0 }} className="o opacity-0 scale-0 relative top-[100px]">
+      <motion.div whileInView={{ opacity: 1, top: 0 }} className="o opacity-0 relative top-[100px]">
 
         <SectionTitle
           pretitle="Watch a video"
@@ -72,11 +72,11 @@ export default function Home() {
           &nbsp;
         </SectionTitle>
       </motion.div>
-      <motion.div whileInView={{ opacity: 1, scale: 1, top: 0 }} className="o opacity-0 scale-0 relative top-[100px]">
+      <motion.div whileInView={{ opacity: 1, top: 0 }} className="o opacity-0 relative top-[100px]">
 
         <Video />
       </motion.div>
-      <motion.div whileInView={{ opacity: 1, scale: 1, top: 0 }} className="o opacity-0 scale-0 relative top-[100px]">
+      <motion.div whileInView={{ opacity: 1, top: 0 }} className="o opacity-0 relative top-[100px]">
 
         <SectionTitle
           id="founders"
@@ -86,7 +86,7 @@ export default function Home() {
           &nbsp;
         </SectionTitle>
       </motion.div>
-      <motion.div whileInView={{ opacity: 1, scale: 1, top: 0 }} className="o opacity-0 scale-0 relative top-[100px]">
+      <motion.div whileInView={{ opacity: 1, top: 0 }} className="o opacity-0 relative top-[100px]">
 
         <Testimonials />
       </motion.div>
