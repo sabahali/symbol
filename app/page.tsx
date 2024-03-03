@@ -46,9 +46,9 @@ export default function Home() {
         </div>
         <Hero />
       </div>
-      {/* <motion.div whileInView={{ opacity: 1, scale: 1, left: 0 }} className="opacity-0 scale-0 relative -left-[400px]"> */}
+      {/* <motion.div whileInView={{ opacity: 1, left: 0 }} className="opacity-0 relative -left-[400px]"> */}
         <Features />
-      
+      {/*  */}
 
         <SectionTitle
           id='courses'
