@@ -12,12 +12,12 @@ export default function hero() {
                 <div className='md:max-h-[80vh] overflow-auto p-5 md:p-10'>
 
                     <p className='text-base md:text-xl indent-5 text-justify'>
-                    Welcome to the world of applied psychology curated by Thasneema, a dynamic researcher and academician dedicated to societal well-being. Thasneema's journey is not just marked by academic excellence but fueled by a keen interest in research, driven by an unwavering commitment to contributing to the betterment of society.
+                    Welcome to the world of applied psychology curated by Thasneema, a dynamic researcher and academician dedicated to societal well-being. Thasneema&apos;s journey is not just marked by academic excellence but fueled by a keen interest in research, driven by an unwavering commitment to contributing to the betterment of society.
                     </p>
                     <br />
                     <p className='font-bold text-md md:text-2xl'>Research Enthusiast</p>
                     <br />
-                    <p className='text-base md:text-xl indent-5 text-justify'>Thasneema's academic voyage is deeply rooted in a passion for research. With a third rank in University for M.Sc in Applied Psychology and prestigious certifications such as UGC-NET and Kerala-SET, she has consistently demonstrated a fervent curiosity to delve into the intricacies of the human mind and behavior.</p>
+                    <p className='text-base md:text-xl indent-5 text-justify'>Thasneema&apos;s academic voyage is deeply rooted in a passion for research. With a third rank in University for M.Sc in Applied Psychology and prestigious certifications such as UGC-NET and Kerala-SET, she has consistently demonstrated a fervent curiosity to delve into the intricacies of the human mind and behavior.</p>
                     <br /><p className='font-bold text-md md:text-2xl'>Areas of Interest</p>
                     <br />
                     <p className='text-base md:text-xl indent-5 text-justify'>
@@ -36,13 +36,13 @@ export default function hero() {
                     <p className='font-bold text-md md:text-2xl'>Continued Learning</p>
                     <br />         
                     <p className='text-base md:text-xl indent-5 text-justify'>
-                    Thasneema's journey is characterized by a thirst for knowledge. Alongside being a Certified Pre-Marital Counselor, she actively participates in conferences and workshops, showcasing her commitment to staying abreast of the latest developments in the field.
+                    Thasneema&apos;s journey is characterized by a thirst for knowledge. Alongside being a Certified Pre-Marital Counselor, she actively participates in conferences and workshops, showcasing her commitment to staying abreast of the latest developments in the field.
                     </p>  
                     <br /> 
                     <hr/>
                     <br />
                     <p className='text-base md:text-xl indent-5 text-justify'>
-                    Thasneema's profile is a testament to her dual commitment - to the pursuit of knowledge through research and to the application of that knowledge for the betterment of society. Join her in this intellectual and compassionate journey where the transformative power of psychology meets a sincere dedication to societal well-being.
+                    Thasneema&apos;s profile is a testament to her dual commitment - to the pursuit of knowledge through research and to the application of that knowledge for the betterment of society. Join her in this intellectual and compassionate journey where the transformative power of psychology meets a sincere dedication to societal well-being.
                     </p>       
 
                 </div>
