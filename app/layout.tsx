@@ -26,7 +26,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="ocean overflow-x-clip">
+          <div className="ocean overflow-x-clip top-[25vh]">
           <div className="wave"></div>
           </div>
           {children}
