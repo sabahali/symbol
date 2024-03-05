@@ -26,10 +26,13 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <div className="ocean overflow-x-clip">
+          <div className="wave"></div>
+          </div>
           {children}
 
 
         </ThemeProvider></body>
-    </html>
+    </html >
   );
 }
