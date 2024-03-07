@@ -4,6 +4,7 @@ import ThemeChanger from "./DarkSwitch";
 import Image from "next/image"
 import { Disclosure, Transition } from "@headlessui/react";
 import { login } from "@/actions/login";
+import { useEffect } from "react";
 const Navbar = ({navLinks,transition}) => {
   // const navLinks = [
   //   {
@@ -34,7 +35,7 @@ const Navbar = ({navLinks,transition}) => {
         {/* Logo  */}
         <Disclosure>
 
-          {({ open }) => (
+          {({ open,close}) => (
             <>
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
                 <Link href="/">
@@ -107,7 +108,7 @@ const Navbar = ({navLinks,transition}) => {
                 :<Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                 <>
                   {navLinks.map((item, index) => (
-                    <a key={index} href={`${item.link}`} className="w-full  dark:hover:text-slate-50 px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none dark:focus:text-slate-50">
+                    <a key={index} href={`${item.link}`} onClick={()=>close()}  className="w-full  dark:hover:text-slate-50 px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none dark:focus:text-slate-50">
                       {item.text}
                     </a>
 
@@ -115,6 +116,7 @@ const Navbar = ({navLinks,transition}) => {
    
                   {
                     <a onClick={async () => {
+                      close();
                       await login('/dashboard')
                     }} className="w-full select-none hover:cursor-pointer dark:hover:text-slate-50 px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none dark:focus:text-slate-50">Signin</a>
                   }
