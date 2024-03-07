@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import NextAuth from "next-auth"
 export const { auth } = NextAuth(authConfig);
 const publicRoutes = [
-    "/","/elizabathroy","/sherin","/thasneema"
+    "/","/elizabathroy","/sherin","/thasneema","/anjo_george","/ayisharahna"
 ];
 const authRoutes = ['/dashboard/students']
 const apiAuthPrefix = "/api/auth";

@@ -1,7 +1,6 @@
 import React from 'react'
 import Container from "./container";
 import { InfiniteMovingCards } from "./infinite-moving-cards";
-import Infintescroll2 from './Infinitescroll2';
 export default function Features() {
     const testimonials = [
         {

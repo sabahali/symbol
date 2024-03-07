@@ -7,18 +7,20 @@ import Container from "./container";
 import thasneema from "../public/img/thasneema.png";
 import eliz from "../public/img/eliz.png"
 import sherin from "../public/img/sherin.png"
+import aysiha from "../public/img/ayisha.png"
+import anjo from "../public/img/anjogeorge.png"
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 const Testimonials = () => {
   const router = useRouter()
   return (
     <Container>
-      <div className=" px-8 grid gap-10 lg:grid-cols-2 xl:grid-cols-3" >
+      <div className=" px-8 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 place-content-center" >
       <div className=" hover:shadow-lg cursor-pointer">
           <Link href='/thasneema'>
             <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-10 rounded-2xl py-10 dark:bg-trueGray-800">
               <p className="text-base md:text-md lg:text-xl xl:text-xl leading-normal ">
-                A dynamic <Mark>researcher</Mark> and academician dedicated to societal well-being
+                Dynamic <Mark>researcher</Mark> and academician dedicated to societal well-being
               </p>
 
               <Avatar
@@ -29,9 +31,41 @@ const Testimonials = () => {
             </div>
           </Link>
         </div>
-        <Link href='/elizabathroy'>
+        <div className=" hover:shadow-lg cursor-pointer">
+          <Link href='/ayisharahna'>
+            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-10 rounded-2xl py-10 dark:bg-trueGray-800">
+              <p className="text-base md:text-md lg:text-xl xl:text-xl leading-normal ">
+              Dedicated <Mark>academic director</Mark>, Educator in Psychology, Psychotherapist, and accomplished Researcher.
+              </p>
+
+              <Avatar
+                image={aysiha}
+                name="Ayisha Rahna K P"
+                title="Academic Director- Psychology | Researcher | Psychology Teacher at UAE"
+              />
+            </div>
+          </Link>
+        </div>
+      <div className=" hover:shadow-lg cursor-pointer">
+          <Link href='/anjo_george'>
+            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-10 rounded-2xl py-10 dark:bg-trueGray-800">
+              <p className="text-base md:text-md lg:text-xl xl:text-xl leading-normal ">
+              Dedicated <Mark>academic director</Mark>, Educator in Psychology, Psychotherapist, and accomplished Researcher.
+              </p>
+
+              <Avatar
+                image={anjo}
+                name="Anjo George"
+                title="Academic Director-Psychology"
+              />
+            </div>
+          </Link>
+        </div>
+   
+        
           
           <div className="lg:col-span-2 xl:col-auto hover:shadow-lg cursor-pointer">
+          <Link href='/elizabathroy'>
             <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-10 rounded-2xl py-10 dark:bg-trueGray-800">
               <p className="text-base md:text-md lg:text-xl xl:text-xl leading-normal ">
                 Dedicated <Mark>professional</Mark> with a strong academic background and a passion for research and teaching in the field of psychology
@@ -44,8 +78,9 @@ const Testimonials = () => {
 
               />
             </div>
+            </Link>
           </div>
-        </Link>
+        
 
 
         <div className=" hover:shadow-lg cursor-pointer">
