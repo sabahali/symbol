@@ -1,6 +1,6 @@
 import React from 'react'
 import Lottie from 'react-lottie';
-import * as animationData from './psych.json'
+import * as animationData from './psychnew.json'
 
 
 export default function Psych() {
